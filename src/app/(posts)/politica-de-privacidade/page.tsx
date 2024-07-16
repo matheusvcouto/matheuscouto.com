@@ -7,9 +7,9 @@ interface PageProps {
 const Page: React.FC<PageProps> = (props) => {
   return (
     <>
-      <h2>Política de Privacidade – Criação e Desenvolvimento de Sites</h2>
+      <h2>Política de Privacidade – matheuscouto.com</h2>
 
-      <p>A privacidade e a proteção dos dados pessoais de visitantes de nossas mídias digitais, assim como a transparência no processo de tratamento dessas informações, são muito importantes para nosso serviço de criação e desenvolvimento de sites. Ao consentir o uso de cookies, de acordo com os termos desta política, ao acessar o site pela primeira vez, os usuários nos autorizam a usar a tecnologia de coleta de dados toda vez que acessam nosso site. Neste documento, explicamos porque coletamos informações pessoais e o que fazemos para mantê-las seguras.</p>
+      <p>A privacidade e a proteção dos dados pessoais de visitantes de nossas mídias digitais, assim como a transparência no processo de tratamento dessas informações, são muito importante para nós. Ao consentir o uso de cookies, de acordo com os termos desta política, ao acessar o site pela primeira vez, os usuários nos autorizam a usar a tecnologia de coleta de dados toda vez que acessam nosso site. Neste documento, explicamos porque coletamos informações pessoais e o que fazemos para mantê-las seguras.</p>
 
       <h3>Coleta de Informações Pessoais</h3>
       <p>Os seguintes tipos de informações pessoais podem ser coletados, armazenados e usados:</p>
@@ -21,7 +21,6 @@ const Page: React.FC<PageProps> = (props) => {
         <li>Informações, como seu nome e endereço de e-mail, que você digita para configurar assinaturas de nossos e-mails e/ou newsletters;</li>
         <li>Informações que você digita durante o uso dos serviços em nosso site;</li>
         <li>Informações geradas ao usar nosso site, incluindo quando, com que frequência e em que local você o utiliza;</li>
-        <li>Informações que você publica em nosso site com a intenção de publicá-las na internet, incluindo seu nome de usuário, fotos de perfil e o conteúdo de suas publicações;</li>
         <li>Informações contidas em quaisquer comunicações que você nos envia por e-mail ou através de nosso site, incluindo o conteúdo e os metadados da comunicação;</li>
         <li>Qualquer outra informação pessoal que você nos enviar.</li>
       </ul>

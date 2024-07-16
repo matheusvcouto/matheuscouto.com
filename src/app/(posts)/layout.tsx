@@ -38,7 +38,7 @@ export default function RootLayout({
             />
           </div> */}
 
-          <div className="prose prose-invert mx-auto w-full">
+          <div className="prose prose-invert mx-auto w-full prose-a:text-blue-400 hover:prose-a:text-blue-500">
             {children}
           </div>
 
