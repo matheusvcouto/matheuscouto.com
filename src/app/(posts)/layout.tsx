@@ -11,6 +11,7 @@ export default function RootLayout({
     <div className="relative flex min-h-screen w-full flex-col items-center bg-zinc-950">
       <div className="mx-auto w-full max-w-[800px] px-6 py-20 max-md:py-12">
         <div className="flex flex-col gap-8">
+          
           <div className="mx-auto w-full">
             <div className="-mx-8 flex items-center gap-4">
               <Button

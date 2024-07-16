@@ -97,6 +97,9 @@ const Page: React.FC<PageProps> = (props) => {
       <p>Podemos atualizar esta política periodicamente, através da publicação de uma nova versão em nosso site. Você deve verificar esta página ocasionalmente para garantir que quaisquer mudanças nesta política. Podemos notificá-lo sobre as mudanças nesta política por e-mail ou através do sistema de mensagens privadas em nosso site.</p>
 
       <h3>Fale Conosco</h3>
+      <a href="https://api.whatsapp.com/send/?phone=5598985720808&text=Ol%C3%A1%2C+tenho+interesse+em+um+site.&type=phone_number&app_absent=0">
+        WhatsApp
+      </a>
 
     </>
   );
