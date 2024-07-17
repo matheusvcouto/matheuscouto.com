@@ -1,7 +1,9 @@
 import { Button } from "@/components/ui/button";
+import { SimpleButton } from "@/components/ui/SimpleButton";
+import { cn } from "@/lib/utils";
 import { ArrowLeft, ArrowRight } from "lucide-react";
 import Link from "next/link";
-
+// import { SimpleButton } from "./(components)/SimpleButton";
 export default function RootLayout({
   children,
 }: Readonly<{
@@ -11,20 +13,17 @@ export default function RootLayout({
     <div className="relative overflow-hidden flex min-h-screen w-full flex-col items-center bg-zinc-950">
       <div className="mx-auto w-full max-w-[800px] px-6 py-20 max-md:py-12">
         <div className="flex flex-col gap-8">
-          
-          <div className="mx-auto w-full">
+
+          <div className="mx-auto w-full md:px-12">
             <div className="-mx-8 flex items-center gap-4">
-              <Button
-                asChild
-                size="lg"
-                variant="link"
-                className="text-zinc-400"
-              >
-                <Link href="/">
-                  <ArrowLeft className="mr-2 size-4" />
-                  back to homepage
-                </Link>
-              </Button>
+              <SimpleButton 
+                text="back to homepage"
+                to="/"
+                icon={{
+                  Icon: ArrowLeft,
+                  position: 'left'
+                }}
+              />
             </div>
           </div>
 
@@ -42,31 +41,25 @@ export default function RootLayout({
             {children}
           </div>
 
-          <div className="mx-auto w-full">
+          <div className="mx-auto w-full md:px-12">
             <div className="-mx-8 flex items-center justify-between gap-4">
-              <Button
-                asChild
-                size="lg"
-                variant="link"
-                className="text-zinc-400"
-              >
-                <Link href="/">
-                  <ArrowLeft className="mr-2 size-4" />
-                  back to homepage
-                </Link>
-              </Button>
-
-              <Button
-                asChild
-                size="lg"
-                variant="link"
-                className="text-zinc-400 gap-2"
-              >
-                <Link href="https://wa.me/5598985720808?text=Ol%C3%A1%2C%20tenho%20interesse%20em%20um%20site.">
-                  Entrar em contato
-                  <ArrowRight className="size-4" />
-                </Link>
-              </Button>
+              <SimpleButton 
+                text="back to homepage"
+                to="/"
+                icon={{
+                  Icon: ArrowLeft,
+                  position: 'left'
+                }}
+              />
+              <SimpleButton 
+                text="Entrar em contato"
+                to='https://wa.me/5598985720808?text=Ol%C3%A1%2C%20tenho%20interesse%20em%20um%20site.'
+                icon={{
+                  Icon: ArrowRight,
+                  position: 'right'
+                }}
+                className="max-md:text-right"
+              />
             </div>
           </div>
         </div>
