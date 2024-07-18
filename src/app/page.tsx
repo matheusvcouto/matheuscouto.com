@@ -1,12 +1,9 @@
 import { ArrowRight } from 'lucide-react'
-import { Merriweather } from 'next/font/google'
-import Image from 'next/image'
 import Link from 'next/link'
-import { twMerge } from 'tailwind-merge'
 
-import { Button } from '@/components/ui/button'
+import { Button } from '~/components/ui/button'
 
-import { cn } from '@/lib/utils'
+import { cn } from '~/lib/utils'
 
 export default function Homepage() {
   return (

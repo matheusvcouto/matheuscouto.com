@@ -1,6 +1,6 @@
-import { Button } from "@/components/ui/button";
-import { SimpleButton } from "@/components/ui/SimpleButton";
-import { cn } from "@/lib/utils";
+import { Button } from "~/components/ui/button";
+import { SimpleButton } from "~/components/ui/SimpleButton";
+import { cn } from "~/lib/utils";
 import { ArrowLeft, ArrowRight } from "lucide-react";
 import Link from "next/link";
 // import { SimpleButton } from "./(components)/SimpleButton";
