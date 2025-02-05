@@ -2,7 +2,8 @@
 @tailwind components;
 @tailwind utilities;
 
-html, body {
+html,
+body {
   width: 100%;
   height: 100%;
 }
@@ -11,4 +12,46 @@ html, body {
   .text-balance {
     text-wrap: balance;
   }
+} */
+
+/* Estilos para navegadores WebKit (Chrome, Safari, Opera) */
+
+/* ::-webkit-scrollbar-thumb {
+  background-color: #cb0000; 
+  border-radius: 10px; 
+  border: 3px solid #f1f1f1; 
+}
+
+* {
+  // scrollbar-width: pode ser 'auto', 'thin' ou 'none' 
+  scrollbar-width: thin;
+  scrollbar-color: #888 #252525;
+} */
+
+/* Define a largura da scrollbar */
+::-webkit-scrollbar {
+  width: 0.75rem;
+  height: 0.75rem;
+}
+
+/* Estiliza a trilha da scrollbar */
+::-webkit-scrollbar-track {
+  background: #1a1a1a;
+  /* border-radius: 0.5rem; */
+}
+
+/* Estiliza o "thumb" da scrollbar */
+::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 0.25rem;
+  border: 3px solid #1a1a1a; /* Cria um "padding" visual */
+}
+
+/* E no hover, você pode alterar a cor para um efeito interativo */
+::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
+
+/* ::-webkit-scrollbar-button {
+  background: #f83030;
 } */

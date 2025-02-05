@@ -1,42 +1,81 @@
+// import Link from 'next/link'
+import { Link } from 'next-view-transitions'
+import type { CSSProperties } from 'react'
+import React from 'react'
+import { Button } from '~/components/ui/button'
+import { tw } from '~/lib/tw'
+import { cn } from '~/lib/utils'
 
-import { Button } from '~/components/ui/button';
-import { cn } from '~/lib/utils';
-import { ArrowLeft } from 'lucide-react';
-import Link from 'next/link';
-import React, { ComponentProps } from 'react';
-
-interface ButtonProps extends ComponentProps<'button'> {
+interface ButtonProps {
   to?: string
   text: string
   icon?: {
     position: 'left' | 'right'
+    size?: 'md' | 'lg'
     Icon: React.ComponentType<React.SVGProps<SVGSVGElement>>
-  } 
+    css?: CSSProperties
+    clasName?: string
+  }
+  className?: string
 }
 
-const SimpleButton: React.FC<ButtonProps> = ({ to, text, icon, className, ...props }) => {
+type IconSize = Exclude<NonNullable<ButtonProps['icon']>['size'], undefined>
+
+const SimpleButton: React.FC<ButtonProps> = ({
+  to,
+  text,
+  icon,
+  className,
+  ...props
+}) => {
+  const iconSizeMap: Record<IconSize, string> = {
+    md: tw`size-4`,
+    lg: tw`size-5`,
+  }
+
   return (
     <Button
       asChild
       size="lg"
       variant="link"
-      className={
-        cn(className, "dark:text-zinc-400 text-zinc-400 transition-all duration-700 hover:text-white hover:no-underline group")
-      }
+      className={cn(
+        className,
+        'group text-zinc-400 transition-all duration-700 hover:text-white hover:no-underline',
+      )}
       {...props}
     >
-      <Link
-        href={to ?? '/'}
-      >
-        {icon && icon.position === 'left' && <icon.Icon className='mr-2 size-4' />}
+      <Link href={to ?? '/'}>
+        {icon && icon.position === 'left' && (
+          <icon.Icon
+            className={cn(
+              'mr-2',
+              iconSizeMap[icon.size ?? 'md'],
+              icon.clasName,
+            )}
+            style={icon.css}
+          />
+        )}
         <span className="relative">
           {text}
-          <div className={cn('absolute w-0 h-0.5 bg-white transition-all delay-0 duration-700 group-hover:w-full rounded-full')} />
+          <div
+            className={cn(
+              'absolute h-0.5 w-0 rounded-full bg-white transition-all delay-0 duration-700 group-hover:w-full',
+            )}
+          />
         </span>
-        {icon && icon.position === 'right' && <icon.Icon className='ml-2 size-4' />}
+        {icon && icon.position === 'right' && (
+          <icon.Icon
+            className={cn(
+              'ml-2',
+              iconSizeMap[icon.size ?? 'md'],
+              icon.clasName,
+            )}
+            style={icon.css}
+          />
+        )}
       </Link>
     </Button>
   )
-};
+}
 
-export { SimpleButton };
+export { SimpleButton }
