@@ -1,0 +1,6 @@
+export * from './CTASection'
+export * from './FooterSection'
+export * from './HeroSection'
+export * from './ProblemSection'
+export * from './SolutionSection'
+export * from './TimelineSection'

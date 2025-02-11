@@ -1,5 +1,5 @@
 {
-  "workbench.colorTheme": "GitHub Dark Dimmed",
+  "workbench.colorTheme": "Min Dark",
   "files.exclude": {
     "**/.git": true,
     "**/.svn": true,
@@ -14,5 +14,4 @@
     // ["tw\\(([^)]*)\\)", "'([^']*)'"]
     ["tw`([^`]*)", ""]
   ],
-  "tailwindCSS.emmetCompletions": true
 }

@@ -1,0 +1,17 @@
+::-webkit-scrollbar {
+  width: 0.75rem;
+  height: 0.75rem;
+}
+
+/* Estiliza a trilha da scrollbar */
+::-webkit-scrollbar-track {
+  background: #eee;
+  /* border-radius: 0.5rem; */
+}
+
+/* Estiliza o "thumb" da scrollbar */
+::-webkit-scrollbar-thumb {
+  background: rgba(0, 0, 0, 0.3);
+  border-radius: 0.25rem;
+  border: 3px solid #eee; /* Cria um "padding" visual */
+}
