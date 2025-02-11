@@ -26,7 +26,12 @@ function Cta(props: {
 }) {
   return (
     <FastCta
-      classNameIn={props.classNameIn}
+      classNameIn={{
+        Dialog: {
+          Content: tw`max-md:h-full max-md:w-full`,
+        },
+        ...props.classNameIn,
+      }}
       components={{
         form: <Form />,
         button: (

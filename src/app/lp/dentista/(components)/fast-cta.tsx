@@ -9,7 +9,7 @@ export function FastCta({
   classNameIn,
   components,
 }: {
-  classNameIn?: { div?: string }
+  classNameIn?: { div?: string; Dialog?: { Content?: string } }
   components: {
     form: React.ReactNode
     button: React.ReactNode

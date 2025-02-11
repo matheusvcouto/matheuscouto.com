@@ -80,32 +80,27 @@ export function Form() {
       className="flex w-full flex-col items-center justify-center gap-2"
       onSubmit={handleSubmit(submitForm)}
     >
-      <div className="flex w-full gap-2">
-        <div className="w-full space-y-2">
-          <Text content="Nome:" />
-          <Input
-            variant="outline"
-            type="text"
-            placeholder="Nome:"
-            {...register('nome')}
-          />
-          <TextError error={errors} field="nome" />
-        </div>
-        <div className="w-full space-y-2">
-          <Text content="Telefone:" />
-          <Input
-            variant="outline"
-            type="text"
-            placeholder="+55 (99) 9 9999-9999"
-            {...telefoneRegister}
-            ref={(e) => {
-              telefoneRegister.ref(e)
-              phoneRef.current = e
-            }}
-          />
-          <TextError error={errors} field="telefone" />
-        </div>
-      </div>
+      <Text content="Nome:" />
+      <Input
+        variant="outline"
+        type="text"
+        placeholder="Nome:"
+        {...register('nome')}
+      />
+
+      <TextError error={errors} field="nome" />
+      <Text content="Telefone:" />
+      <Input
+        variant="outline"
+        type="text"
+        placeholder="+55 (99) 9 9999-9999"
+        {...telefoneRegister}
+        ref={(e) => {
+          telefoneRegister.ref(e)
+          phoneRef.current = e
+        }}
+      />
+      <TextError error={errors} field="telefone" />
 
       <Text content="Email:" />
       <Input
