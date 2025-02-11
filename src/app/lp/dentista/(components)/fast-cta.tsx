@@ -25,7 +25,12 @@ export function FastCta({
       <Dialog.Root>
         <Dialog.Overlay className="bg-blue-800 data-[state=closed]:animate-none data-[state=open]:animate-none" />
         <Dialog.Trigger asChild>{components.button}</Dialog.Trigger>
-        <Dialog.Content className="flex flex-col gap-4 bg-white text-black">
+        <Dialog.Content
+          className={cn(
+            'flex flex-col gap-4 bg-white text-black',
+            classNameIn?.Dialog?.Content,
+          )}
+        >
           <Dialog.Header className="relative w-full">
             <div className="relative">
               <Dialog.Cancel className="absolute -right-6 -top-4 bg-transparent hover:bg-transparent max-sm:-top-6">

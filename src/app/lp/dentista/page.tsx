@@ -28,7 +28,7 @@ function Cta(props: {
     <FastCta
       classNameIn={{
         Dialog: {
-          Content: tw`max-md:h-full max-md:w-full`,
+          Content: tw`max-md:justify-between max-sm:h-full max-sm:w-full max-sm:rounded-none`,
         },
         ...props.classNameIn,
       }}
