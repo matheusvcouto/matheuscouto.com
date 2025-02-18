@@ -1,35 +1,13 @@
 'use client'
 import { zodResolver } from '@hookform/resolvers/zod'
 import IMask from 'imask'
-import { useEffect, useRef } from 'react'
+import { startTransition, useActionState, useEffect, useRef } from 'react'
 import { useForm } from 'react-hook-form'
-import { z } from 'zod'
 import { Input, inputVariants } from '~/components/ui'
 import { cn } from '~/lib/utils'
 import { Button } from '~/modules/lp/components/button'
-
-const formSchema = z.object({
-  nome: z
-    .string()
-    .nonempty('Este campo é obrigatorio!')
-    .min(3, 'No minimo 3 caracteres')
-    .max(250, 'Maximo de 250 caracteres'),
-  telefone: z
-    .string()
-    .nonempty('O número de telefone é obrigatório!')
-    .and(
-      z
-        .string()
-        .refine((val) => val.split('').length === 20, 'telefone inválido'),
-    ),
-  horario: z
-    .string()
-    .nonempty('O número de telefone é obrigatório!')
-    .endsWith('0'),
-  email: z.string().email(),
-})
-
-type formSchema = z.infer<typeof formSchema>
+import { actionDentista } from './action'
+import { formSchema } from './form-schema'
 
 export function Form() {
   const {
@@ -55,8 +33,23 @@ export function Form() {
     }
   }, [])
 
-  function submitForm(data: formSchema) {
-    console.log(data)
+  const [data, action, isPending] = useActionState(actionDentista, null)
+
+  // const { isPending, execute, ...rest } = useServerAction(actionDentista)
+
+  // useEffect(() => {
+  //   console.log(isPending, rest)
+  // }, [isPending, rest])
+
+  // const submit = (data: formSchema) => execute(data)
+
+  const submit = async (data: formSchema) => {
+    const formdata = new FormData()
+    for (const [key, value] of Object.entries(data)) {
+      formdata.append(key, value)
+    }
+    startTransition(() => action(formdata))
+    return
   }
 
   function TextError<T extends keyof formSchema>({
@@ -78,7 +71,8 @@ export function Form() {
   return (
     <form
       className="flex w-full flex-col items-center justify-center gap-2"
-      onSubmit={handleSubmit(submitForm)}
+      // action={action}
+      onSubmit={handleSubmit(submit)}
     >
       <Text content="Nome:" />
       <Input
@@ -140,9 +134,12 @@ export function Form() {
         <Button
           size="sm"
           type="submit"
-          className="mt-1 bg-blue-800 font-normal text-white max-md:w-full"
+          className={cn(
+            'mt-1 bg-blue-800 font-normal text-white max-md:w-full',
+            isPending && 'bg-blue-800/50',
+          )}
         >
-          Enviar
+          {isPending ? 'Enviando...' : 'Enviar'}
         </Button>
       </div>
     </form>

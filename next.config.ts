@@ -1,6 +1,14 @@
 import type { NextConfig } from 'next'
 
+import './src/env/server'
+
 const nextConfig: NextConfig = {
+  logging: {
+    fetches: {
+      fullUrl: true,
+      hmrRefreshes: true,
+    },
+  },
   // for generate static
   // output: "export",
   // images: {
