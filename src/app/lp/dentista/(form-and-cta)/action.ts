@@ -77,7 +77,7 @@ export const actionDentista = async (_: unknown, formData: FormData) => {
     subject: `Novo cliente - ${data.nome}`,
     to: env.SEND_TO_EMAIL,
   })
-  return redirect(`/whatsapp`)
+  return redirect(`/whatsapp?name=${data.nome}`)
 }
 
 // export const submitform = createServerAction()
