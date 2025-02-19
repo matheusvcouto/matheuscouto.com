@@ -3,16 +3,16 @@ import { formatPhoneNumberForURL } from '~/lib/format-number-for-url'
 import CountdownWhatsApp from './(countdown-whatsapp)'
 
 interface PageProps {
-  searchParams: { [key: string]: string | string[] | undefined }
+  // searchParams: Promise<{ [key: string]: string | string[] | undefined }>
+  searchParams: Promise<{ name?: string }>
 }
 
-export default function HomePage({ searchParams }: PageProps) {
+export default async function HomePage({ searchParams }: PageProps) {
+  const queryParam = await searchParams
   return (
     <CountdownWhatsApp
       whatsAppNumber={formatPhoneNumberForURL(env.WHATSAPP_NUMBER)}
-      name={
-        typeof searchParams.name === 'string' ? searchParams.name : undefined
-      }
+      name={queryParam.name}
     />
   )
 }

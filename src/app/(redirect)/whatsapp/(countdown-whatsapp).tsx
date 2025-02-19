@@ -27,6 +27,7 @@ const CountdownWhatsApp = ({
         window.location.href = `https://wa.me/${whatsAppNumber}`
       }, 2500)
     }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [count])
 
   return (
